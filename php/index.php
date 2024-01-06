@@ -23,7 +23,8 @@
                     
                     <div class="form-group">
                         <label for="nombre">Nombre de groupes</label>
-                        <input type="number" class="form-control" value="2" name="nombre" id="nombre" max="60" min="1">
+                        <input type="range" class="form-control-range" value="2" name="nombre" id="nombre" max="70" min="1" oninput="updateValue(this.value)">
+                        <p class="mt-2">Nombre actuel : <span id="rangeValue">2</span></p>
                     </div>
                     
                     <button type="submit" class="btn btn-primary btn-block">Créer des groupes</button>
@@ -109,6 +110,13 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        // Fonction pour mettre à jour la valeur affichée dynamiquement
+        function updateValue(value) {
+            document.getElementById("rangeValue").innerText = value;
+        }
+    </script>
 
 </body>
 </html>
