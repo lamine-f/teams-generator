@@ -43,10 +43,10 @@ class Local( ITeamsGeneration ):
         random.shuffle(teammatesIdsList)
         for i in range(0, teammatesIdsListLength, teamLength):
             if ( teammatesIdsListLength - (i+teamLength) < teamLength ):
-                teams.append(teammatesIdsList[i:-1])
+                teams.append(teammatesIdsList[i:teammatesIdsListLength])
                 break
-            else:
-                teams.append(teammatesIdsList[i:i + teamLength])
+            
+            teams.append(teammatesIdsList[i:i + teamLength])
         self.teams = teams
 
     def _toString(self):
