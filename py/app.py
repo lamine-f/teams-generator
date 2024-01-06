@@ -1,6 +1,11 @@
-from modules.teams import Teams
+from modules.teamsgeneration import Local
 
-teams = Teams(teamsName="Groupe", numberPerTeam=3, saveLastTeamsOnly=False)
-teams.generateTeams()
-teams.showTeams()
-teams.backup()
+ltg = Local(
+    teamsName="Groupe", 
+    numberPerTeam=3, 
+    saveLastTeamsOnly=False
+    )
+
+ltg.generate()
+ltg.show()
+ltg.save()
